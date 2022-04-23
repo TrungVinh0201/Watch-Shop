@@ -1,0 +1,28 @@
+.desc_wrap{
+    width: 70%;
+    margin: 20px auto;
+}
+.tab{
+    display: flex;
+    gap: 7px;
+}
+.btn_tab{
+    padding: 5px 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #fff;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+}
+
+.desc h3{
+    font-weight: 500;
+    font-size: 30px;
+    width: 70%;
+    margin-top: 10px;
+}
+.desc_content li {
+    font-size: 17px;
+}

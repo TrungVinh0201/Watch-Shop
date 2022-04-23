@@ -30,6 +30,7 @@
 .header_logo{
     font-size: 35px;
     color: #dc3545;
+    cursor: pointer;
 }
 .header_action{
     display: flex;
