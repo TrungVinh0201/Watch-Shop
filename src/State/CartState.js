@@ -51,7 +51,7 @@ export const cartQuantity = selector({
     get: ({ get }) => {
         const cart = get(cartState);
         return cart.reduce((total, item) => {
-            return total + (item.quantity);
+            return total + (item?.quantity);
         }, 0);
     }
 });
@@ -61,7 +61,7 @@ export const cartTotal = selector({
     get: ({ get }) => {
         const cart = get(cartState);
         return cart.reduce((total, item) => {
-            return total + (item.product.price * item.quantity);
+            return total + (item?.product?.price * item?.quantity);
         }, 0);
     }
 });

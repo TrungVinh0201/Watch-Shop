@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import "../../App.css";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
-News.propTypes = {
-    
-};
 
 function News(props) {
     const [newsList ,setNewsList] = useState([])
+    let navigate = useNavigate();
+
     const getNewsList = () => {
         fetch('https://radiant-stream-23882.herokuapp.com/api/v1/posts')
         .then(response => response.json())
@@ -16,6 +16,10 @@ function News(props) {
     useEffect(() => {
         getNewsList()
     },[])
+
+    const handleGoPostDetail  = (post,idPost) => {
+        navigate(`/post/${idPost}`)
+    }
 
     return (
         <div className = "section_wrap">
@@ -27,8 +31,8 @@ function News(props) {
           {newsList.map((news) => (
              <div className="news" key={news._id}>
                 <img src={`https://radiant-stream-23882.herokuapp.com/img/post/${news.logo}`} className='news_img' alt={news.logo} />
-                <span className='news_title'>{news.title}</span>
-                <span className='news_desc'>{news.contentSub}</span>
+                <span className='news_title' onClick={() => (handleGoPostDetail(news,news._id))}>{news.title}</span>
+                <span className='news_desc'onClick={() => (handleGoPostDetail(news,news._id))}>{news.contentSub}</span>
             </div>
           ))}
         </div>

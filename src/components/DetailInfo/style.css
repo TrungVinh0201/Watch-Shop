@@ -1,28 +1,107 @@
-.desc_wrap{
+.desc_wrap {
     width: 70%;
     margin: 20px auto;
+    border: 1px solid #ccc;
+    padding-bottom: 30px;
 }
-.tab{
+
+.tab {
     display: flex;
     gap: 7px;
+    border-bottom: 1px solid #ccc;
 }
-.btn_tab{
+
+.btn_tab {
     padding: 5px 15px;
     text-transform: uppercase;
     font-weight: 500;
     cursor: pointer;
     background-color: #fff;
-    border-left: 2px solid #ccc;
-    border-right: 2px solid #ccc;
-    border-top: 2px solid #ccc;
 }
 
-.desc h3{
+.desc {
+    padding: 5px 20px;
+}
+
+.desc h3 {
     font-weight: 500;
     font-size: 30px;
     width: 70%;
     margin-top: 10px;
 }
+
 .desc_content li {
     font-size: 17px;
+    margin: 5px;
+}
+
+.desc_content {
+    display: flex;
+    gap: 150px;
+}
+
+.desc_item {
+    font-weight: 500;
+}
+
+.comment {
+    width: 80%;
+    margin: 0 auto;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.comment_title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.comment_btn {
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment_res {
+    font-size: 17px;
+}
+
+.text_area {
+    border: 2px solid;
+    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+.text_area:focus {
+    border: 2px solid red;
+}
+
+.please {
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+.active {
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    color: red
+}
+.similar_product h3{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+}
+.product_list {
+    width:80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 30px;
 }

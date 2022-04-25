@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './style.css'
+import React, { useState } from 'react';
+import DetailComment from './DetailComment';
 import DetailDesc from './DetailDesc';
 import InsurancePolicy from './InsurancePolicy';
-import DetailComment from './DetailComment';
+import SimilarProduct from './SimilarProduct';
+import './style.css';
 
 DetailInfo.propTypes = {
     productDesc: PropTypes.object
@@ -28,16 +29,19 @@ const tabs = [
 
 function DetailInfo({productDesc}) {
     const [tabActive , setTabActive] = useState('desc')
-    const handleClickTag = (name) => {
+    const [activeID , setActiveID] = useState(1)
+
+    const handleClickTag = (name,tabID) => {
         setTabActive(name)
+        setActiveID(tabID)
     }
 
-    console.log(tabActive);
     return (
+       <>
         <div className='desc_wrap'>
             <div className="tab">
                 {tabs.map((tab) => (
-                    <button key={tab.id} className='btn_tab' onClick={() => handleClickTag(tab.name)}>{tab.title}</button>
+                    <button key={tab.id} className={`btn_tab ${activeID === tab.id ? 'active' : ''}`} onClick={() => handleClickTag(tab.name, tab.id)}>{tab.title}</button>
                 ))}
             </div>
             {tabActive === 'desc' && 
@@ -51,6 +55,8 @@ function DetailInfo({productDesc}) {
                 <DetailComment commentContent = {productDesc}/>
             </div>}
         </div>
+        <SimilarProduct similarProduct = {productDesc}/>
+       </>
     );
 }
 

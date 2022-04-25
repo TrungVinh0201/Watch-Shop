@@ -12,6 +12,7 @@ import BackTop from './components/BackTop';
 import Detail from './Pages/Detail';
 import FormLogin from './components/FormLogin';
 import CartInfo from './components/CartInfo';
+import Post from './Pages/Post';
 
 function App() {
   const isLogin = Boolean( localStorage.getItem('token'))
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<FormLogin />}/>
       <Route path="/product" element={<HomePage />}/>
       <Route path="/cart" element={<CartInfo />}/>
+      <Route path="/post/:id" element={<Post />}/>
       <Route path="product/:id" element={<Detail />}/>
     </Routes>
     <Footer/>

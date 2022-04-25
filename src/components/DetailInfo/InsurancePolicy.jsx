@@ -1,14 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import DOMPurify from 'dompurify';
 
-InsurancePolicy.propTypes = {
-    
-};
-
-function InsurancePolicy(props) {
+function InsurancePolicy({insuranceContent}) {
+    const safeDescription = DOMPurify.sanitize(insuranceContent.warrantyPolicy)
     return (
-        <div>
-            InsurancePolicy
+        <div style={{marginTop : '30px' ,padding : '5px 20px'}} dangerouslySetInnerHTML={{ __html: safeDescription }}>
         </div>
     );
 }

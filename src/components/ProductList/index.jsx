@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import "../../App.css";
-import "./style.css";
-import {
-    useRecoilState,
-  } from 'recoil';
-import { productListState } from '../../State/ProductState';
-import { addToCart, cartState } from '../../State/CartState';
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {
+    useRecoilState
+} from 'recoil';
+import "../../App.css";
+import { addToCart, cartState } from '../../State/CartState';
+import { productListState } from '../../State/ProductState';
+import "./style.css";
 toast.configure()
 
 function ProductList() {
