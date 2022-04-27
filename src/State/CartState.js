@@ -46,6 +46,7 @@ export const deleteItemCart = (cart, idDelete   ) => {
     })
 };
 
+
 export const cartQuantity = selector({
     key: 'cartQuantity',
     get: ({ get }) => {
@@ -55,6 +56,7 @@ export const cartQuantity = selector({
         }, 0);
     }
 });
+
 
 export const cartTotal = selector({
     key: 'cartTotal',

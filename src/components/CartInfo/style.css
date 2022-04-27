@@ -49,3 +49,12 @@ h4{
 .img_placeholder{
     width: 500px;
 }
+.input_quantity{
+    border: 1px solid;
+    width: 50px;
+}
+.quantity button{
+    cursor: pointer;
+    margin: 0 3px;
+    border :1px solid;
+}
