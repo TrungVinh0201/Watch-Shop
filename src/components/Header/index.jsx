@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import {
-    useRecoilValue,useRecoilState
+    useRecoilValue, useRecoilState
 } from 'recoil';
 import { cartQuantity } from '../../State/CartState';
 import { productListState } from '../../State/ProductState';
@@ -14,8 +14,8 @@ function Header() {
     let navigate = useNavigate();
     const [valueInput, setValueInput] = useState('')
     const isLogin = Boolean(localStorage.getItem('token'))
-    const [productList ,setProductList] = useRecoilState(productListState)
-    const [listProductSearch ,setListProductSearch] = useState([])
+    const [productList, setProductList] = useRecoilState(productListState)
+    const [isSearch, setIsSearch] = useState(false)
     const quantity = useRecoilValue(cartQuantity);
     const handleGoToLoginPage = () => {
         navigate('/')
@@ -29,12 +29,16 @@ function Header() {
             navigate('/cart')
         }
     }
-
     const handleSearch = () => {
+        setIsSearch(true)
         fetch(`https://radiant-stream-23882.herokuapp.com/api/v1/search?title=${valueInput}`)
-        .then(response => response.json())
-        .then(product => setProductList(product.data));
+            .then(response => response.json())
+            .then(product => setProductList(product.data));
     }
+    useEffect(() => {
+        handleSearch()
+    }, [isSearch === true])
+
     return (
         <div className="header">
             <div className="header_search">

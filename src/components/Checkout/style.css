@@ -1,0 +1,32 @@
+.bill{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #Ccc;
+}
+.bill_title{
+    font-size: 30px;
+}
+.info > span{
+    font-size: 20px;
+    margin-top: 10px;
+    border-bottom: 3px solid #CCC;
+    padding-bottom: 10px;
+}
+.bill_detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+.bill_total{
+    font-size: 20px;
+}
+
+.btn_confirm{
+    margin-top: 50px;
+    text-transform: capitalize;
+}

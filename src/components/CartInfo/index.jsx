@@ -20,6 +20,9 @@ function CartInfo() {
     const backHome = () => {
         navigate('/product')
     }
+    const handleCheckout = () => {
+        navigate('/checkout')
+    }
     const hanldeDeleteCart = (idDelete) => {
         const newCart = deleteItemCart(cart, idDelete);
         setCartList(newCart);
@@ -29,10 +32,10 @@ function CartInfo() {
                 theme: 'dark'
             })
     }
-    const handleDecreaseQuantity = () =>{
-      console.log('GIAM');
+    const handleDecreaseQuantity = () => {
+        console.log('GIAM');
     }
-    const handleIncreaseQuantity = () =>{
+    const handleIncreaseQuantity = () => {
         console.log('TANG');
     }
     return (
@@ -41,6 +44,7 @@ function CartInfo() {
                 <h4>Cart</h4>
                 <span>{`Bạn đang có ${quantity} sản phẩm trong giỏ 🛒`}</span>
                 <span>{`Thành tiền : ${total.toLocaleString('vi', { style: 'currency', currency: 'VND' })}💰`}</span>
+                <button onClick={handleCheckout} className='btn buy_now'>Tiến Hành Đặt Hàng</button>
             </div>
             {cart.length > 0 ? <div className="cart">
                 {cart.map((item) => (
@@ -49,9 +53,9 @@ function CartInfo() {
                         <span className='cart_title'>Tên sản phẩm : {item?.product?.title} </span>
                         <span className='cart_price'>Giá :{item?.product?.price.toLocaleString('vi', { style: 'currency', currency: 'VND' })} </span>
                         <div className="quantity">
-                        <button className='quantity_decrease' onClick={() => handleDecreaseQuantity()}>-</button>
-                        <span>{item?.quantity}</span>
-                        <button className='quantity_increase' onClick={() => handleIncreaseQuantity()}>+</button>
+                            <button className='quantity_decrease' onClick={() => handleDecreaseQuantity()}>-</button>
+                            <span>{item?.quantity}</span>
+                            <button className='quantity_increase' onClick={() => handleIncreaseQuantity()}>+</button>
                         </div>
                         <span className='cart_total'>Tổng cộng: {(item?.product?.price * item?.quantity).toLocaleString('vi', { style: 'currency', currency: 'VND' })}</span>
                         <span className='delete' onClick={() => hanldeDeleteCart(item?.id)}>
