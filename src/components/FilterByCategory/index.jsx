@@ -21,7 +21,7 @@ function FilterByCategory() {
     const [cart, setCart] = useRecoilState(cartState);
     const [isLoading, setIsLoading] = useState(true)
 
-    //call Api
+   
     useEffect(() => {
         fetch(
             `https://radiant-stream-23882.herokuapp.com/api/v1/product?${filterInfo}`

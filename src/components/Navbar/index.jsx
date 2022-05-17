@@ -42,12 +42,6 @@ function Navbar() {
     const handleFilterByCategory = (category, brand) => {
         navigate(`category?type=${category}&brand=${brand}`);
     };
-    const handleGoToPost = () => {
-        window.scrollTo(0, document.body.scrollHeight - 800);
-    };
-    useEffect(() => {
-        handleGoToPost();
-    }, [location]);
 
     return (
         <>
@@ -78,7 +72,6 @@ function Navbar() {
                                 <li
                                     className="navbar_item"
                                     key={item.id}
-                                    onClick={handleGoToPost}
                                 >
                                     <span className="navbar_name">{item.title}</span>
                                 </li>
